@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f9f9f9;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sticky-header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0070f3;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 10px;
+            flex-direction: column;
+        }
+        .dropdown div {
+            padding: 10px;
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .dropdown a:hover {
+            background: #f0f0f0;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+        .country-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+         
+        .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-buttons .login-btn {
+    padding: 8px 20px;
+    border: 2px solid #0070f3;
+    background-color: transparent;
+    color: #0070f3;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-buttons .signup-btn {
+    padding: 10px 22px;
+    border: none;
+    background-color: #0070f3;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-buttons .login-btn:hover {
+    background-color: #0070f3;
+    color: white;
+}
+
+.auth-buttons .signup-btn:hover {
+    background-color: #005bb5;
+}
+
+
+        .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:50px 0;
+    background: white;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width:85%;
+    margin: auto;
+    flex-direction: row;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: #1a52e2;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-buttons button {
+    padding: 12px 25px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #1a52e2;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0f3bb5;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1px solid #1a52e2;
+    color: #1a52e2;
+}
+
+.btn-secondary:hover {
+    background: #eaf2ff;
+}
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+        
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+        .country-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.flag-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+.flag-container:hover {
+    background: #f0f0f0;
+}
+
+.flag-container img {
+    width: 26px; 
+    height: 18px;
+    border-radius: 3px;
+}
+
+.flag-container span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.country-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    list-style: none;
+    padding: 8px 0;
+    width: 120px;
+}
+
+.country-dropdown li {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.country-dropdown li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: block;
+}
+
+.country-dropdown li:hover {
+    background: #f0f0f0;
+}
+
+.flag-container:hover .country-dropdown {
+    display: block;
+}
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("nav ul li").forEach(function(item) {
+                item.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    let dropdown = this.querySelector(".dropdown");
+                    if (dropdown) {
+                        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+                    }
+                });
+            });
+
+            document.addEventListener("click", function() {
+                document.querySelectorAll(".dropdown").forEach(function(dropdown) {
+                    dropdown.style.display = "none";
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Razorpay_logo.png" alt="Logo">
+                    </a>
+                </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Payments</a>
+                        <div class="dropdown">
+                            <a href="#">Payment Aggregator</a>
+                            <a href="#">Payment Gateway</a>
+                            <a href="#">Payment Links</a>
+                            <a href="#">Payment Pages</a>
+                            <a href="#">Payment Buttons</a>
+                            <a href="#">QR Codes</a>
+                            <a href="#">Instant Settlement</a>
+                            <a href="#">Magic Checkout</a>
+                            <a href="#">Smart Collect</a>
+                            <a href="#">Subscriptions</a>
+                            <a href="#">International Payments</a>
+                            <a href="#">Embedded Payments</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Banking+</a>
+                        <div class="dropdown">
+                            <a href="#">RazorpayX</a>
+                            <a href="#">Source to pay</a>
+                            <a href="#">Payout</a>
+                            <a href="#">Payout links</a>
+                            <a href="#">View Live demo</a>
+                            <a href="#">Current Account</a>
+                            <a href="#">Escrow+Account</a>
+                            <a href="#">Forex/FDI Transfers</a>
+                            <a href="#">Bank Account Verification</a>
+                            <a href="#">Tax Payments</a>
+                            <a href="#">Lending Tech Stack</a>
+                            <a href="#">Corporate Cards</a>
+                            <a href="#">RazorPay Capital</a>
+                            <a href="#">Company Registration</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Payroll</a>
+                        <div class="dropdown">
+                            <a href="#">For Startups & SMEs</a>
+                            <a href="#">For Enterprises</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Engage</a></li>
+                    <li><a href="#">Partners</a>
+                        <div class="dropdown">
+                            <a href="#">Partner Programs</a>
+                            <a href="#">RazorPay X Partners</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Resources</a>
+                        <div class="dropdown">
+                            <div>Awareness</div>
+                            <a href="#">Blog</a>
+                            <a href="#">Learn</a>
+                            <a href="#">Events</a>
+                            <a href="#">White Papers</a>
+                            <a href="#">Customer Stories</a>
+                            <div>Developers</div>
+                            <a href="#">Developer Docs</a>
+                            <a href="#">Integrations</a>
+                            <a href="#">API Reference</a>
+                            <a href="#">API Playground</a>
+                            <a href="#">Onboarding APIs</a>
+                            <div>Solutions</div>
+                            <a href="#">SaaS</a>
+                            <a href="#">E-Commerce</a>
+                            <a href="#">Education</a>
+                            <a href="#">BFSI</a>
+                            <a href="#">Freelance</a>
+                            <div>Free Tools</div>
+                            <a href="#">GST Calculator</a>
+                            <a href="#">Online TDS Payment</a>
+                            <a href="#">GST Number Search</a>
+                            <a href="#">GST Search by PAN</a>
+                            <a href="#">ROI Calculator</a>
+                            <a href="#">CAGR Calculator</a>
+                            <a href="#">EBITDA Calculator</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="country-selector">
+            <div class="flag-container">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="Indian Flag">
+                <span>India</span>
+                <ul class="country-dropdown">
+                    <li><a href="#">India</a></li>
+                    <li><a href="#">Malaysia</a></li>
+                    <li><a href="#">Singapore</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="auth-buttons">
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+        
+
+    </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Easy In-Person Payments for India's finest disruptors</h2>
+                <p>Quick Payments | Seamless Integration | Top-tier UPI stack</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Sign Up Now</button>
+                    <button class="btn-secondary">Know More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://framerusercontent.com/images/KExxxw4ObE9qXhCFwOugzPf2w.webp" alt="Hero Image">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Razorpay Clone. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
